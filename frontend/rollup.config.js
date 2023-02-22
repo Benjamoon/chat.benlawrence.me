@@ -45,7 +45,7 @@ export default {
       include: 'src/**/*.svelte',
     }),
     resolve({ browser: true }),
-    !production & serve(),
-    !production & livereload('public'),
+    !production && serve(),
+    !production && livereload('public'),
   ],
 };
