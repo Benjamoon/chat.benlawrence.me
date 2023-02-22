@@ -1,7 +1,7 @@
 import PocketBase from 'pocketbase';
 import { writable } from 'svelte/store';
 
-export const pb = new PocketBase('https://chat.benlawrence.me/pb/'); 
+export const pb = new PocketBase('https://pb.chat.benlawrence.me/'); 
 
 export const user = writable(pb.authStore.model);
 
