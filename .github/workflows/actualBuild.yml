@@ -33,7 +33,7 @@ jobs:
         id: version_by_tag
         with:
           isUseGithubRunNumber: true
-          
+          path: "./frontend"
       - name: "Create new release"
         id: "create_release"
         uses: actions/create-release@v1
