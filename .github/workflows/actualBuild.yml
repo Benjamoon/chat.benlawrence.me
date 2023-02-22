@@ -22,6 +22,8 @@ jobs:
           node-version: latest
           cache: 'npm'
           cache-dependency-path: "frontend/package-lock.json"
-      - run: cd frontend
-      - run: npm ci
-      - run: npm build
+      - name: "Install and build..."
+        working-directory: "./frotend"
+        run: |
+          npm ci
+          npm run build
