@@ -28,20 +28,14 @@ jobs:
       - name: "ZIP the public directory"
         working-directory: "./frontend/public"
         run: zip -r release.zip .
-      - name: Get version and version code
-        uses: xom9ikk/version-by-tag@v1
-        id: version_by_tag
-        with:
-          isUseGithubRunNumber: true
-          path: "./frontend"
       - name: "Create new release"
         id: "create_release"
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ steps.version_by_tag.outputs.tag }}
-          release_name: Release ${{ steps.version_by_tag.outputs.semver }}
+          tag_name: ${{ github.sha }}
+          release_name: Release ${{ github.sha }}
       - name: "Upload this"
         uses: actions/upload-release-asset@v1
         env:
