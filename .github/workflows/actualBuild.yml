@@ -35,11 +35,10 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
       - name: "Upload this"
-        working-directory: "./frontend/public"
         uses: actions/upload-release-asset@v1
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./release.zip
+          asset_path: ./frontend/public/release.zip
           asset_name: release.zip
           asset_content_type: application/zip
 
