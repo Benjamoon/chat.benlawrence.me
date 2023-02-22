@@ -1,6 +1,6 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: Build
+run-name: ${{ github.actor }} is running the build task
 on: [push]
 jobs:
-  CloneRepo:
-    - uses: actions/checkout@v3
+  - name: Checkout
+    uses: actions/checkout@v3.3.0
