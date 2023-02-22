@@ -21,7 +21,7 @@
 
             localStorage.setItem("oauthTempInfo", JSON.stringify(methods.authProviders[id]))
             localStorage.setItem("messageContent", content)
-            window.location.href = methods.authProviders[id].authUrl + "http://localhost.benlawrence.me/oauthcallback"
+            window.location.href = methods.authProviders[id].authUrl + "https://chat.benlawrence.me/oauthcallback"
 
             return
         }
