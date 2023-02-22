@@ -1,7 +1,0 @@
-name: Build
-run-name: ${{ github.actor }} is running the build task
-on: [push]
-jobs:
-  Build:
-    - name: Checkout
-      uses: actions/checkout@v3.3.0
