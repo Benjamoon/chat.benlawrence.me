@@ -31,6 +31,8 @@ function serve() {
   };
 }
 
+const production = !process.env.ROLLUP_WATCH;
+
 export default {
   input: 'src/main.js',
   output: {
@@ -43,7 +45,7 @@ export default {
       include: 'src/**/*.svelte',
     }),
     resolve({ browser: true }),
-    serve(),
-    livereload('public'),
+    !production & serve(),
+    !production & livereload('public'),
   ],
 };
