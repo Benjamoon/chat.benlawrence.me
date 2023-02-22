@@ -21,7 +21,7 @@
             oauthInfo.name,
             urlParams.get("code"),
             oauthInfo.codeVerifier,
-            'http://localhost.benlawrence.me/oauthcallback'
+            'https://chat.benlawrence.me/oauthcallback'
         );
 
         window.location.href = "/"
